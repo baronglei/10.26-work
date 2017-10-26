@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-3.1.1.min.js">
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				$.ajax({
+					url: 'http://localhost:3000/brl',
+					type: 'post',
+					data: {name:'name'},
+					success: function(e) {
+						$('.btn').click(function() {
+							$('.box').append('<h1>' + e.name + '</h1>')
+							$('.box').append('<p>' + e.content + '</p>')
+						})
+					}
+				})
+
+			})
+		</script>
+		<style type="text/css">
+			#wrap {margin: 20px auto;text-align: center;}
+			#wrap h1 {font-size: 40px;color: #00008B;}
+			#wrap form {margin-top: 30px;}
+			.box {width: 600px;height: 400px;border: 1px solid #000;margin: 0 auto;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>Skier Dictionary</h1>
+			<div class="box"></div>
+			<form action="" method="post">
+				<input type="" name="" id="name" value="" placeholder="name" />
+				<input type="" name="" id="content" value="" placeholder="content" id="btn" />
+				<input type="button" value="Add  tem " />
+			</form>
+		</div>
+	</body>
+
+</html>
