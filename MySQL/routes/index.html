@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-3.1.1.min.js">
+		</script>
+		<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url: 'http://localhost:3000/',
+				type: 'POST',
+				success: function(e) {
+					console.log(e)
+					for(var i in e) {
+						$('table').append(
+							
+'<tr><td>' + e[i].id + '</td><td>' + e[i].name + '</td><td>' + e[i].age +'</td></tr>')
+					}
+				}
+			})
+		})
+			
+		</script>
+	</head>
+
+	<body>
+		<table border="1" cellspacing="0" cellpadding="10">
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>age</th>
+			</tr>
+		</table>
+	</body>
+
+</html>
